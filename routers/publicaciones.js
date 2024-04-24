@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getPaginasWebComercio, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, actualizarPaginaWebComercio } = require("../controllers/publicacionesController");
+const { getPaginasWebComercio, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, actualizarPaginaWebComercio } = require("../controllers/publicacionController");
 
 // Ruta para obtener todas las páginas web de comercios
 router.get("/", getPaginasWebComercio);

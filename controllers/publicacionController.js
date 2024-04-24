@@ -1,4 +1,4 @@
-const WebComercio = require('../models/nosql/webComercio');
+const WebComercio = require('../models/nosql/publicaciones');
 const { matchedData } = require('express-validator');
 
 /**
