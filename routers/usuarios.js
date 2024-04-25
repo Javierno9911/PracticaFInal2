@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getUsuarios, crearUsuario, obtenerUsuarioPorId, actualizarUsuario } = require("../controllers/usuarioController");
+const { getUsuarios, crearUsuario, obtenerUsuarioPorId, actualizarUsuario, eliminarUsuario} = require("../controllers/usuarioController");
 
 // Ruta para obtener todos los usuarios
 router.get("/", getUsuarios);
@@ -13,5 +13,8 @@ router.post("/", crearUsuario);
 
 // Ruta para actualizar un usuario por su ID
 router.put("/:id", actualizarUsuario);
+
+// Ruta para eliminar un usuario por su ID
+router.delete("/:id", eliminarUsuario);
 
 module.exports = router;

@@ -71,4 +71,23 @@ const actualizarPaginaWebComercio = async (req, res) => {
     }
 }
 
-module.exports = { getPaginasWebComercio, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, actualizarPaginaWebComercio };
+/**
+ * Eliminar una página web de comercio por su ID
+ * @param {*} req
+ * @param {*} res
+ */
+const eliminarPaginaWebComercio = async (req, res) => {
+    try {
+        const { id } = req.params; // Obtener el ID del parámetro de la ruta
+        const paginaWebEliminada = await WebComercio.findByIdAndDelete(id);
+        if (!paginaWebEliminada) {
+            return res.status(404).send("Página web de comercio no encontrada");
+        }
+        res.send("Página web de comercio eliminada correctamente");
+    } catch(err) {
+        console.error(err);
+        res.status(500).send("Error al eliminar la página web de comercio");
+    }
+}
+
+module.exports = { getPaginasWebComercio, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, actualizarPaginaWebComercio, eliminarPaginaWebComercio  };

@@ -1,0 +1,52 @@
+//RECIBE CADA TABLA DE DATOS
+//TABLA DE USUARIOS
+
+GET http://localhost:3000/api/usuarios
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
+//TABLA DE USUARIOS CON ID
+
+GET http://localhost:3000/api/usuarios/662a79881fa85a225acc0ca1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
+//AÑADIR DATOS A CADA TABLA DE DATOS
+//TABLA DE USUARIOS
+
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+
+{
+  "nombre": "Nacho",
+  "email": "Nacho@example.com",
+  "password": "123",
+  "edad": 34,
+  "ciudad": "Madrid",
+  "intereses": ["deportes", "tecnología"],
+  "permiteRecibirOfertas": true
+}
+###
+
+
+//EDICION USUARIO
+
+PUT http://localhost:3000/api/usuarios/{id}
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+
+{
+  "nombre": "Nuevo nombre",
+  "email": "nuevo@example.com",
+  "password": "nuevacontraseña",
+  "edad": 31,
+  "ciudad": "Nueva Ciudad",
+  "intereses": ["música", "viajes"],
+  "permiteRecibirOfertas": false
+}
+
+//ELIMINAR ADMINS DELETE
+
+DELETE http://localhost:3000/api/{id}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE

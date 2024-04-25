@@ -71,4 +71,23 @@ const actualizarComercio = async (req, res) => {
     }
 }
 
-module.exports = { getComercios, crearComercio, obtenerComercioPorId, actualizarComercio };
+/**
+ * Eliminar un comercio por su ID
+ * @param {*} req
+ * @param {*} res
+ */
+const eliminarComercio = async (req, res) => {
+    try {
+        const { id } = req.params; // Obtener el ID del parámetro de la ruta
+        const comercioEliminado = await Comercio.findByIdAndDelete(id);
+        if (!comercioEliminado) {
+            return res.status(404).send("Comercio no encontrado");
+        }
+        res.send("Comercio eliminado correctamente");
+    } catch(err) {
+        console.error(err);
+        res.status(500).send("Error al eliminar el comercio");
+    }
+}
+
+module.exports = { getComercios, crearComercio, obtenerComercioPorId, actualizarComercio, eliminarComercio};

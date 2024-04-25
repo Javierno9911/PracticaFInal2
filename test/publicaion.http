@@ -1,0 +1,48 @@
+//RECIBE CADA TABLA DE DATOS
+//TABLA DE PUBLICAIONES
+
+GET http://localhost:3000/api/publicaciones
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
+//TABLA DE PUBLICAIONES CON ID
+
+GET http://localhost:3000/api/publicaciones
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
+//TABLA DE PUBLICAIONES
+
+POST http://localhost:3000/api/publicaciones
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+
+{
+  "comercioId": "662a2fad777a76a05dba641d",
+  "tokenJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+  "ciudad": "Ciudad de Ejemplo",
+  "actividad": "Actividad de Ejemplo",
+  "titulo": "Título de la Página Web",
+  "resumen": "Resumen de la Página Web",
+  "textos": [
+    "Texto adicional 1",
+    "Texto adicional 2"
+  ],
+  "fotos": [
+    "URL de la foto 1",
+    "URL de la foto 2"
+  ],
+  "datosNoModificables": {
+    "scoring": 0,
+    "numeroPuntuaciones": 0,
+    "resenhas": [
+      "Reseña 1",
+      "Reseña 2"
+    ]
+  }
+}
+
+//EDICION PUBLICAIONES
+
+
+//ELIMINAR PUBLICAIONES

@@ -1,0 +1,25 @@
+//RECIBE CADA TABLA DE DATOS
+//TABLA DE COMERCIOS
+
+GET http://localhost:3000/api/comercio
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
+//TABLA DE COMERCIOS CON ID
+GET http://localhost:3000/api/comercio/662a309d777a76a05dba6421
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+POST http://localhost:3000/api/comercio
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+
+{
+  "nombre": "Mi Comercio",
+  "CIF": "A12345678",
+  "direccion": "Calle Ejemplo, 123",
+  "email": "comercio@example.com",
+  "telefono": "123456789"
+}
+###
+//EDICION COMERCIOS PUT 
+//ELIMINAR COMERCIOS DELETE

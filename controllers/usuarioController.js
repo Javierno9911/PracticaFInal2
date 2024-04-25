@@ -8,6 +8,7 @@ const { matchedData } = require('express-validator');
  */
 const getUsuarios = async (req, res) => {
     try {
+        const user = req.user 
         const data = await Usuario.find({});
         res.send(data);
     } catch(err) {
@@ -40,6 +41,7 @@ const crearUsuario = async (req, res) => {
 const obtenerUsuarioPorId = async (req, res) => {
     try {
         const { id } = matchedData(req);
+        console.log("ID recibido:", id);
         const usuario = await Usuario.findById(id);
         if (!usuario) {
             return res.status(404).send("Usuario no encontrado");
@@ -71,4 +73,24 @@ const actualizarUsuario = async (req, res) => {
     }
 }
 
-module.exports = { getUsuarios, crearUsuario, obtenerUsuarioPorId, actualizarUsuario };
+/**
+ * Eliminar un usuario por su ID
+ * @param {*} req
+ * @param {*} res
+ */
+const eliminarUsuario = async (req, res) => {
+    try {
+        const { id } = req.params; // Obtener el ID del parámetro de la ruta
+        const usuarioEliminado = await Usuario.findByIdAndDelete(id);
+        if (!usuarioEliminado) {
+            return res.status(404).send("Usuario no encontrado");
+        }
+        res.send("Usuario eliminado correctamente");
+    } catch(err) {
+        console.error(err);
+        res.status(500).send("Error al eliminar el usuario");
+    }
+}
+
+
+module.exports = { getUsuarios, crearUsuario, obtenerUsuarioPorId, actualizarUsuario, eliminarUsuario };
