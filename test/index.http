@@ -1,0 +1,70 @@
+
+//RECIBE CADA TABLA DE DATOS
+//TABLA DE COMERCIOS
+
+GET http://localhost:3000/api/comercio
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
+//TABLA DE USUARIOS
+
+GET http://localhost:3000/api/usuarios
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
+//TABLA DE PUBLICAIONES
+
+GET http://localhost:3000/api/publicaciones
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
+//TABLA DE ADMINS
+
+GET http://localhost:3000/api/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+
+
+###
+
+GET http://localhost:3000/api/comercio
+
+###
+
+
+POST http://localhost:3000/api/comercios
+Content-Type: application/json
+
+{
+    "nombre": "Nombre del comercio",
+    "cif": "CIF123",
+    "direccion": "Dirección del comercio",
+    "email": "correo@comercio.com",
+    "telefono": "123456789",
+    "idPagina": 1
+}
+
+###
+
+PUT http://localhost:3000/api/comercios/CIF123
+Content-Type: application/json
+
+{
+    "nombre": "Nuevo nombre del comercio",
+    "cif": "CIF123",
+    "direccion": "Nueva dirección del comercio",
+    "email": "nuevo_correo@comercio.com",
+    "telefono": "987654321",
+    "idPagina": 2
+}
+
+###
+DELETE http://localhost:3000/api/comercios/CIF123
+
+###
+
+PATCH http://localhost:3000/api/comercios/CIF123
+Content-Type: application/json
+
+{
+    "direccion": "Nueva dirección del comercio"
+}
