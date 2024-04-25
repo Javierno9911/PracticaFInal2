@@ -23,48 +23,49 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 GET http://localhost:3000/api/admin
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
-
 ###
 
-GET http://localhost:3000/api/comercio
+//AÑADIR DATOS A CADA TABLA DE DATOS
+//TABLA DE USUARIOS
 
-###
-
-
-POST http://localhost:3000/api/comercios
+POST http://localhost:3000/api/usuarios
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
 {
-    "nombre": "Nombre del comercio",
-    "cif": "CIF123",
-    "direccion": "Dirección del comercio",
-    "email": "correo@comercio.com",
-    "telefono": "123456789",
-    "idPagina": 1
+  "nombre": "Juan",
+  "email": "juan@example.com",
+  "password": "contraseña123",
+  "edad": 30,
+  "ciudad": "Ciudad de México",
+  "intereses": ["deportes", "tecnología"],
+  "permiteRecibirOfertas": true
 }
 
 ###
 
-PUT http://localhost:3000/api/comercios/CIF123
+//TABLA DE ADMINS
+
+POST http://localhost:3000/api/admin
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
 {
-    "nombre": "Nuevo nombre del comercio",
-    "cif": "CIF123",
-    "direccion": "Nueva dirección del comercio",
-    "email": "nuevo_correo@comercio.com",
-    "telefono": "987654321",
-    "idPagina": 2
+  "email": "admin@example.com",
+  "password": "contraseña123"
 }
 
 ###
-DELETE http://localhost:3000/api/comercios/CIF123
+//TABLA DE COMERCIOS
 
-###
-
-PATCH http://localhost:3000/api/comercios/CIF123
+POST http://localhost:3000/api/comercio
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
 {
-    "direccion": "Nueva dirección del comercio"
+  "nombre": "Mi Comercio",
+  "CIF": "A12345678",
+  "direccion": "Calle Ejemplo, 123",
+  "email": "comercio@example.com",
+  "telefono": "123456789"
 }

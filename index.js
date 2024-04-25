@@ -27,16 +27,6 @@ app.listen(port, () => {
 
 dbConnect()
 
+module.exports = app
+
 //212.0.109.168
-
-/*
-Primero se configura una aplicación Express y el middleware CORS para permitir solicitudes de recursos desde un origen diferente al del servidor.
-
-Despues se crea una instancia de la aplicaion Express. Esto se realiza en la linea 6.
-
-Se utiliza app.use() para montar el enrutador principal en la ruta /api. El enrutador principal se importa desde el archivo routers.js.
-
-Y finalmente se inicia el servidor obteniendo el puerto que en este caso es el 3000 y con el metodo listen se manda un mensaje por la consola mostrando
-que todo esta bien.
-
-*/
