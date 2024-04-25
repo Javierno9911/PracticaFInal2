@@ -39,7 +39,7 @@ const crearComercio = async (req, res) => {
  */
 const obtenerComercioPorId = async (req, res) => {
     try {
-        const { id } = matchedData(req);
+        const {id} = matchedData(req);
         const comercio = await Comercio.findById(id);
         if (!comercio) {
             return res.status(404).send("Comercio no encontrado");

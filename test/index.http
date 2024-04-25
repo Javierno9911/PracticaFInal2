@@ -6,7 +6,18 @@ GET http://localhost:3000/api/comercio
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
+//TABLA DE COMERCIOS CON ID
+GET http://localhost:3000/api/comercio/662a309d777a76a05dba6421
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
 //TABLA DE USUARIOS
+
+GET http://localhost:3000/api/usuarios
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
+//TABLA DE USUARIOS CON ID
 
 GET http://localhost:3000/api/usuarios
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
@@ -18,11 +29,22 @@ GET http://localhost:3000/api/publicaciones
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
+//TABLA DE PUBLICAIONES CON ID
+
+GET http://localhost:3000/api/publicaciones
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
 //TABLA DE ADMINS
 
 GET http://localhost:3000/api/admin
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
 
+//TABLA DE ADMINS CON ID
+
+GET http://localhost:3000/api/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
 //AÑADIR DATOS A CADA TABLA DE DATOS
@@ -33,14 +55,34 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
 {
-  "nombre": "Juan",
-  "email": "juan@example.com",
-  "password": "contraseña123",
-  "edad": 30,
-  "ciudad": "Ciudad de México",
+  "nombre": "Paco",
+  "email": "Paco@example.com",
+  "password": "123",
+  "edad": 34,
+  "ciudad": "Madrid",
   "intereses": ["deportes", "tecnología"],
   "permiteRecibirOfertas": true
 }
+###
+
+
+//EDICION USUARIO
+
+PUT http://localhost:3000/api/usuarios/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+
+{
+  "nombre": "Nuevo nombre",
+  "email": "nuevo@example.com",
+  "password": "nuevacontraseña",
+  "edad": 31,
+  "ciudad": "Nueva Ciudad",
+  "intereses": ["música", "viajes"],
+  "permiteRecibirOfertas": false
+}
+
+//ELIMINAR ADMINS
 
 ###
 
@@ -54,6 +96,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
   "email": "admin@example.com",
   "password": "contraseña123"
 }
+
+//EDICION ADMINS
+//ELIMINAR ADMINS
 
 ###
 //TABLA DE COMERCIOS
@@ -69,3 +114,42 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
   "email": "comercio@example.com",
   "telefono": "123456789"
 }
+
+//EDICION COMERCIOS
+//ELIMINAR COMERCIOS
+
+###
+//TABLA DE PUBLICAIONES
+
+POST http://localhost:3000/api/publicaciones
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+
+{
+  "comercioId": "662a2fad777a76a05dba641d",
+  "tokenJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+  "ciudad": "Ciudad de Ejemplo",
+  "actividad": "Actividad de Ejemplo",
+  "titulo": "Título de la Página Web",
+  "resumen": "Resumen de la Página Web",
+  "textos": [
+    "Texto adicional 1",
+    "Texto adicional 2"
+  ],
+  "fotos": [
+    "URL de la foto 1",
+    "URL de la foto 2"
+  ],
+  "datosNoModificables": {
+    "scoring": 0,
+    "numeroPuntuaciones": 0,
+    "resenhas": [
+      "Reseña 1",
+      "Reseña 2"
+    ]
+  }
+}
+
+//EDICION PUBLICAIONES
+//ELIMINAR PUBLICAIONES
+

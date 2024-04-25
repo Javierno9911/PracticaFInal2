@@ -29,39 +29,96 @@ const options = {
             },
         },
         schemas:{
-            user: {
+            Usuarios: {
                 type: "object",
-                required: ["name", "age", "email", "password"],
+                required: ["name","email","password", "edad", "ciudad", "intereses", "permiteRecibirOfertas"],
                 properties: {
                     name: {
                         type: "string",
                         example: "Menganito"
                     },
-                    age: {
-                        type: "integer",
-                        example: 20
-                    },
                     email: {
-                        type: "string",
-                        example: "miemail@google.com"
+                      type: "string",
+                      example: "miemail@google.com"
                     },
                     password: {
                         type: "string"
                     },
+                    edad: {
+                        type: "integer",
+                        example: 20
+                    },
+                    ciudad: {
+                      type: "string"
+                    },
+                    intereses:{
+                      type: "[string]"
+                    },
+                    //Boolean
+                    permiteRecibirOfertas:{
+                      type: "Boolean",
+                      example: "True"
+                    },
                 },
             },
-            login: {
-                type: "object",
-                required: ["email", "password"],
-                properties: {
+            Aminds: {
+              type: "object",
+              required: ["email", "password"],
+              properties: {
                   email: {
+                      type: "string",
+                      example: "miemail@google.com"
+                  },
+                  password: {
+                      type: "string"
+                  },
+              },
+            },
+            Comercios: {
+              type: "object",
+              required: ["name", "cif","direccion", "email", "telefono"],
+              properties: {
+                  name: {
+                      type: "string",
+                      example: "Menganito"
+                  },
+                  cif: {
+                      type: "string",
+                  },
+                  direccion: {
                     type: "string",
                     example: "miemail@google.com"
                   },
-                password: {
-                    type: "string"
+                  email: {
+                      type: "string",
+                      example: "miemail@google.com"
                   },
-                }
+                  telefono: {
+                      type: "integer",
+                      example: 601377805
+                  },
+              },
+            },
+            Publicaciones: {
+              type: "object",
+              required: ["name", "age", "email", "password"],
+              properties: {
+                  name: {
+                      type: "string",
+                      example: "Menganito"
+                  },
+                  age: {
+                      type: "integer",
+                      example: 20
+                  },
+                  email: {
+                      type: "string",
+                      example: "miemail@google.com"
+                  },
+                  password: {
+                      type: "string"
+                  },
+              },
             }
         },
       },
