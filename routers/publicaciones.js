@@ -1,20 +1,21 @@
 const express = require("express");
 const router = express.Router();
 const { getPaginasWebComercio, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, actualizarPaginaWebComercio, eliminarPaginaWebComercio  } = require("../controllers/publicacionController");
+const { validatorCreateAdmin, validatorGetAdmin } = require("../validators/publicacion")
 
 // Ruta para obtener todas las páginas web de comercios
-router.get("/", getPaginasWebComercio);
+router.get("/",getPaginasWebComercio);
 
 // Ruta para crear una nueva página web de comercio
-router.post("/", crearPaginaWebComercio);
+router.post("/",crearPaginaWebComercio);
 
 // Ruta para obtener una página web de comercio por su ID
-router.get("/:id", obtenerPaginaWebComercioPorId);
+router.get("/:id",obtenerPaginaWebComercioPorId);
 
 // Ruta para actualizar una página web de comercio por su ID
-router.put("/:id", actualizarPaginaWebComercio);
+router.put("/:id",actualizarPaginaWebComercio);
 
 // Ruta para eliminar una página web de comercio
-router.delete("/:id", eliminarPaginaWebComercio);
+router.delete("/:id",eliminarPaginaWebComercio);
 
 module.exports = router;

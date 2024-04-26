@@ -2,15 +2,16 @@ const express = require("express")
 const cors = require("cors")
 require('dotenv').config();
 const dbConnect = require('./config/mongo')
-const loggerStream = require("./utils/handleLogger")
+//const loggerStream = require("./utils/handleLogger")
 
 const swaggerUi = require("swagger-ui-express")
 const swaggerSpecs = require("./docs/swagger")
 
 const morganBody = require("morgan-body")
 const {IncomingWebhook} = require("@slack/webhook")
-
+/*
 const webHook = new IncomingWebhook(process.env.SLACK_WEBHOOK)
+
 const loggerStream = {
     write: message => {
         webHook.send({text: message})
@@ -24,7 +25,7 @@ morganBody(app, {
     },
     stream: loggerStream
 })
-
+*/
 
 const app = express()
 

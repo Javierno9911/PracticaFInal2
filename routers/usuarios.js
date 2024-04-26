@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { getUsuarios, crearUsuario, obtenerUsuarioPorId, actualizarUsuario, eliminarUsuario} = require("../controllers/usuarioController");
-
+const { validatorCreateUser, validatorGetUser } = require("../validators/usuario")
 
 /**
  * @openapi
@@ -21,7 +21,7 @@ const { getUsuarios, crearUsuario, obtenerUsuarioPorId, actualizarUsuario, elimi
 router.get("/", getUsuarios);
 
 // Ruta para obtener un usuario por su ID
-router.get("/:id", obtenerUsuarioPorId);
+router.get("/:id",validatorGetUser, obtenerUsuarioPorId);
 
 /**
  * @openapi
@@ -49,12 +49,12 @@ router.get("/:id", obtenerUsuarioPorId);
  *         description: Some server error
  *
  */
-router.post("/", crearUsuario);
+router.post("/", validatorCreateUser, crearUsuario);
 
 // Ruta para actualizar un usuario por su ID
-router.put("/:id", actualizarUsuario);
+router.put("/:id", validatorGetUser,actualizarUsuario);
 
 // Ruta para eliminar un usuario por su ID
-router.delete("/:id", eliminarUsuario);
+router.delete("/:id", validatorGetUser,eliminarUsuario);
 
 module.exports = router;
