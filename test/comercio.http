@@ -14,12 +14,33 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
 {
-  "nombre": "Mi Comercio",
-  "CIF": "A12345678",
+  "nombre": "Mi Comercio2",
+  "CIF": "A12345249",
   "direccion": "Calle Ejemplo, 123",
-  "email": "comercio@example.com",
+  "email": "comircio@example.com",
   "telefono": "123456789"
 }
 ###
-//EDICION COMERCIOS PUT 
-//ELIMINAR COMERCIOS DELETE
+
+
+//EDICION USUARIO
+
+PUT http://localhost:3000/api/comercio/662a309d777a76a05dba6421
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+
+{
+  "nombre": "Nuevo nombre",
+  "email": "nuevo@example.com",
+  "password": "nuevacontraseña",
+  "edad": 31,
+  "ciudad": "Nueva Ciudad",
+  "intereses": ["música", "viajes"],
+  "permiteRecibirOfertas": false
+}
+###
+
+//ELIMINAR ADMINS DELETE
+
+DELETE http://localhost:3000/api/comercio/662a309d777a76a05dba6421
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
