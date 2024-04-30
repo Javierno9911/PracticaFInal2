@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const { getUsuarios, crearUsuario, obtenerUsuarioPorId, obtenerUsuariosPorCiudad, actualizarUsuario, eliminarUsuario} = require("../controllers/usuarioController");
 const { validatorCreateUser, validatorGetUser } = require("../validators/usuario")
-
+const authMiddleware = require("../middleware/session")
 // Ruta para obtener todos los usuarios
-router.get("/", getUsuarios);
+router.get("/", /*authMiddleware ,*/getUsuarios);
 
 // Ruta para obtener un usuario por su ID
 router.get("/:id",validatorGetUser, obtenerUsuarioPorId);

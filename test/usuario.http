@@ -25,8 +25,9 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
 {
-  "nombre": "German",
-  "email": "otrocorreo@example.com",
+  "nombre": "Francis",
+  "rol":"admin",
+  "email": "otrocorreo22@example.com",
   "password": "123",
   "edad": 34,
   "ciudad": "Barcelona",
@@ -44,6 +45,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 
 {
   "nombre": "Nuevo nombre",
+  "rol":"admin",
   "email": "nuevo@example.com",
   "password": "nuevacontraseña",
   "edad": 31,
@@ -55,5 +57,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 
 //ELIMINAR ADMINS DELETE
 
-DELETE http://localhost:3000/api/usuarios/662a79881fa85a225acc0ca1
+DELETE http://localhost:3000/api/usuarios/6630c43bdd89149a4bd8579d
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
