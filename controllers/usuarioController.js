@@ -54,6 +54,30 @@ const obtenerUsuarioPorId = async (req, res) => {
 }
 
 /**
+ * Obtener usuarios por ciudad
+ * @param {*} req
+ * @param {*} res
+ */
+const obtenerUsuariosPorCiudad = async (req, res) => {
+    try {
+        const { ciudad } = req.params; // Obtener el parámetro de la ciudad desde la URL
+        console.log("Ciudad recibida:", ciudad);
+
+        // Buscar usuarios por ciudad usando una consulta a tu base de datos
+        const usuarios = await Usuario.find({ ciudad: ciudad });
+
+        if (usuarios.length === 0) {
+            return res.status(404).send("No se encontraron usuarios en esta ciudad");
+        }
+
+        res.send(usuarios);
+    } catch(err) {
+        console.error(err);
+        res.status(500).send("Error al obtener usuarios por ciudad");
+    }
+}
+
+/**
  * Actualizar un usuario por su ID
  * @param {*} req
  * @param {*} res
@@ -93,4 +117,4 @@ const eliminarUsuario = async (req, res) => {
 }
 
 
-module.exports = { getUsuarios, crearUsuario, obtenerUsuarioPorId, actualizarUsuario, eliminarUsuario };
+module.exports = { getUsuarios, crearUsuario, obtenerUsuarioPorId, obtenerUsuariosPorCiudad, actualizarUsuario, eliminarUsuario };

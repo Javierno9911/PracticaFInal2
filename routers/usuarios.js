@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getUsuarios, crearUsuario, obtenerUsuarioPorId, actualizarUsuario, eliminarUsuario} = require("../controllers/usuarioController");
+const { getUsuarios, crearUsuario, obtenerUsuarioPorId, obtenerUsuariosPorCiudad, actualizarUsuario, eliminarUsuario} = require("../controllers/usuarioController");
 const { validatorCreateUser, validatorGetUser } = require("../validators/usuario")
 
 // Ruta para obtener todos los usuarios
@@ -8,6 +8,9 @@ router.get("/", getUsuarios);
 
 // Ruta para obtener un usuario por su ID
 router.get("/:id",validatorGetUser, obtenerUsuarioPorId);
+
+// Ruta para obtener un usuario por su CIUDAD
+router.get("/ciudad/:ciudad", obtenerUsuariosPorCiudad);
 
 // Ruta para crear usuarios.
 router.post("/", validatorCreateUser, crearUsuario);

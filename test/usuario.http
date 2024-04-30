@@ -11,6 +11,12 @@ GET http://localhost:3000/api/usuarios/662a79881fa85a225acc0ca1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
+//TABLA DE USUARIOS CON CIUDAD
+
+GET http://localhost:3000/api/usuarios/ciudad/Madrid
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
 //AÑADIR DATOS A CADA TABLA DE DATOS
 //TABLA DE USUARIOS
 
@@ -19,11 +25,11 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
 {
-  "nombre": "Cacho",
-  "email": "Cacho04@example.com",
+  "nombre": "German",
+  "email": "otrocorreo@example.com",
   "password": "123",
   "edad": 34,
-  "ciudad": "Madrid",
+  "ciudad": "Barcelona",
   "intereses": ["deportes", "tecnología"],
   "permiteRecibirOfertas": true
 }
