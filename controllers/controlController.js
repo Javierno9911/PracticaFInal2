@@ -110,6 +110,30 @@ const obtenerMiembroCiudad = async (req, res) => {
 }
 
 /**
+ * Obtener usuarios por ciudad
+ * @param {*} req
+ * @param {*} res
+ */
+const obtenerMiembroPorIntereses = async (req, res) => {
+    try {
+        const { interes } = req.params; // Obtener el parámetro de interés desde la URL
+        console.log("Interés recibido:", interes);
+
+        // Buscar usuarios cuyo array de intereses incluya el valor especificado
+        const usuarios = await Usuario.find({ intereses: interes });
+
+        if (usuarios.length === 0) {
+            return res.status(404).send(`No se encontraron usuarios con el interés '${interes}'`);
+        }
+
+        res.send(usuarios);
+    } catch(err) {
+        console.error(err);
+        res.status(500).send("Error al obtener usuarios por intereses");
+    }
+}
+
+/**
  * Actualizar un usuario por su ID
  * @param {*} req
  * @param {*} res
@@ -149,4 +173,4 @@ const eliminarMiembro = async (req, res) => {
 }
 
 
-module.exports = { getAdminRol, getMiembro, crearMiembro, obtenerMiembroID, obtenerMiembroCiudad, actualizarMiembro, eliminarMiembro };
+module.exports = { getAdminRol, getMiembro, crearMiembro, obtenerMiembroID, obtenerMiembroPorIntereses ,obtenerMiembroCiudad, actualizarMiembro, eliminarMiembro };

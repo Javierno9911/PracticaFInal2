@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getPaginasWebComercio, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, actualizarPaginaWebComercio, eliminarPaginaWebComercio  } = require("../controllers/publicacionController");
+const { getPaginasWebComercio, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, obtenerPaginaWebComercioPorCiudad,obtenerPaginasPorActividad,actualizarPaginaWebComercio, eliminarPaginaWebComercio  } = require("../controllers/publicacionController");
 const { validatorCreateItem, validatorGetItem } = require("../validators/publicacion")
 
 // Ruta para obtener todas las páginas web de comercios
@@ -8,6 +8,12 @@ router.get("/", getPaginasWebComercio);
 
 // Ruta para obtener una página web de comercio por su ID
 router.get("/:id", validatorGetItem , obtenerPaginaWebComercioPorId);
+
+// Ruta para obtener un usuario por su CIUDAD
+router.get("/ciudad/:ciudad", obtenerPaginaWebComercioPorCiudad);
+
+// Ruta para obtener un usuario por su CIUDAD
+router.get("/actividad/:actividad", obtenerPaginasPorActividad);
 
 // Ruta para crear una nueva página web de comercio
 router.post("/", validatorCreateItem, crearPaginaWebComercio);

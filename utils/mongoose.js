@@ -13,7 +13,6 @@ export async function dbConnect() {
     
     //process.env.MONGODB_URI || "mongodb://localhost:27017/nextjs"
 )
-  // console.log(db.connection.db.databaseName);
   conn.isConnected = db.connections[0].readyState;
 }
 

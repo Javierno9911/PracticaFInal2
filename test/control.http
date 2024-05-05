@@ -10,6 +10,10 @@ GET http://localhost:3000/api/control/ciudad/Barcelona
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
+GET http://localhost:3000/api/control/intereses/Padel
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
+
 GET http://localhost:3000/api/control/rol/admin
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
@@ -21,11 +25,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 {
   "nombre": "Francis",
   "rol":"miembro",
-  "email": "otro@example.com",
+  "email": "otromas00@example.com",
   "password": "123",
   "edad": 34,
   "ciudad": "Barcelona",
-  "intereses": ["deportes", "tecnología"],
+  "intereses": ["Padel", "Fauna"],
   "permiteRecibirOfertas": true
 }
 ###
@@ -48,5 +52,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 
 //ELIMINAR ADMINS DELETE
 
-DELETE http://localhost:3000/api/control/6630c43bdd89149a4bd8579d
+DELETE http://localhost:3000/api/control/6637b1f4adc8b2289b839f42
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE

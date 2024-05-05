@@ -31,11 +31,15 @@ const options = {
         schemas:{
             Usuarios: {
                 type: "object",
-                required: ["name","email","password", "edad", "ciudad", "intereses", "permiteRecibirOfertas"],
+                required: ["name","rol","email","password", "edad", "ciudad", "intereses", "permiteRecibirOfertas"],
                 properties: {
                     name: {
                         type: "string",
                         example: "Menganito"
+                    },
+                    rol: {
+                      type: "string",
+                      example: "miembro"
                     },
                     email: {
                       type: "string",
@@ -60,19 +64,6 @@ const options = {
                       example: "True"
                     },
                 },
-            },
-            Aminds: {
-              type: "object",
-              required: ["email", "password"],
-              properties: {
-                  email: {
-                      type: "string",
-                      example: "miemail@google.com"
-                  },
-                  password: {
-                      type: "string"
-                  },
-              },
             },
             Comercios: {
               type: "object",

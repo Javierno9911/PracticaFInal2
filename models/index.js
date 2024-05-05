@@ -5,8 +5,3 @@ const models = {
     webComercioModel: require('./nosql/publicaciones')
 }
 module.exports = models
-
-/*
-Aqui se exporta el modelo comercio anteriormente creado.
-
-*/

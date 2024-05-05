@@ -50,6 +50,54 @@ const obtenerPaginaWebComercioPorId = async (req, res) => {
         res.status(500).send("Error al obtener la página web de comercio");
     }
 }
+/**
+ * Obtener lista de usuarios
+ * @param {*} req
+ * @param {*} res
+ */
+const obtenerPaginasPorActividad = async (req, res) => {
+    try {
+        const { actividad } = req.params; // Obtener el parámetro de actividad desde la URL
+        console.log("Actividad recibida:", actividad);
+
+        // Buscar páginas web por actividad usando una consulta a la base de datos
+        const paginasWeb = await WebComercio.find({ actividad: actividad });
+
+        if (paginasWeb.length === 0) {
+            return res.status(404).send(`No se encontraron páginas web con la actividad '${actividad}'`);
+        }
+
+        res.send(paginasWeb);
+    } catch(err) {
+        console.error(err);
+        res.status(500).send("Error al obtener páginas web por actividad");
+    }
+}
+
+/**
+ * Obtener lista de usuarios
+ * @param {*} req
+ * @param {*} res
+ */
+
+const obtenerPaginaWebComercioPorCiudad = async (req, res) => {
+    try {
+        const { ciudad } = req.params; // Obtener el parámetro de actividad desde la URL
+        console.log("Actividad recibida:", ciudad);
+
+        // Buscar páginas web por actividad usando una consulta a la base de datos
+        const paginasWeb = await WebComercio.find({ ciudad: ciudad });
+
+        if (paginasWeb.length === 0) {
+            return res.status(404).send(`No se encontraron páginas web con la actividad '${ciudad}'`);
+        }
+
+        res.send(paginasWeb);
+    } catch(err) {
+        console.error(err);
+        res.status(500).send("Error al obtener páginas web por actividad");
+    }
+}
 
 /**
  * Actualizar una página web de comercio por su ID
@@ -90,4 +138,4 @@ const eliminarPaginaWebComercio = async (req, res) => {
     }
 }
 
-module.exports = { getPaginasWebComercio, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, actualizarPaginaWebComercio, eliminarPaginaWebComercio  };
+module.exports = { getPaginasWebComercio, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, obtenerPaginaWebComercioPorCiudad,obtenerPaginasPorActividad ,actualizarPaginaWebComercio, eliminarPaginaWebComercio  };

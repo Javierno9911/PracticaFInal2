@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getAdminRol, getMiembro, crearMiembro, obtenerMiembroID, obtenerMiembroCiudad, actualizarMiembro, eliminarMiembro} = require("../controllers/controlController");
+const { getAdminRol, getMiembro, crearMiembro, obtenerMiembroID, obtenerMiembroPorIntereses,obtenerMiembroCiudad, actualizarMiembro, eliminarMiembro} = require("../controllers/controlController");
 const { validatorCreateControl, validatorGetControl } = require("../validators/control")
 const authMiddleware = require("../middleware/session")
 
@@ -14,6 +14,8 @@ router.get("/:id",validatorGetControl, obtenerMiembroID);
 
 // Ruta para obtener un usuario por su CIUDAD
 router.get("/ciudad/:ciudad", obtenerMiembroCiudad);
+
+router.get("/intereses/:interes", obtenerMiembroPorIntereses);
 
 // Ruta para crear usuarios.
 router.post("/", validatorCreateControl, crearMiembro);
