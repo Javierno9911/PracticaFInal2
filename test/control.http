@@ -1,33 +1,27 @@
-//RECIBE CADA TABLA DE DATOS
-//TABLA DE USUARIOS
-
-GET http://localhost:3000/api/usuarios
+GET http://localhost:3000/api/control
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
-//TABLA DE USUARIOS CON ID
-
-GET http://localhost:3000/api/usuarios/662a79881fa85a225acc0ca1
+GET http://localhost:3000/api/control/6637b0962d9a7d02509eaf9d
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
-//TABLA DE USUARIOS CON CIUDAD
-
-GET http://localhost:3000/api/usuarios/ciudad/Madrid
+GET http://localhost:3000/api/control/ciudad/Barcelona
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
-//AÑADIR DATOS A CADA TABLA DE DATOS
-//TABLA DE USUARIOS
+GET http://localhost:3000/api/control/rol/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+###
 
-POST http://localhost:3000/api/usuarios
+POST http://localhost:3000/api/control
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
 {
   "nombre": "Francis",
-  "rol":"admin",
-  "email": "otrocorreo22@example.com",
+  "rol":"miembro",
+  "email": "otro@example.com",
   "password": "123",
   "edad": 34,
   "ciudad": "Barcelona",
@@ -36,10 +30,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 }
 ###
 
-
-//EDICION USUARIO
-
-PUT http://localhost:3000/api/usuarios/662a79881fa85a225acc0ca1
+PUT http://localhost:3000/api/control/662a79881fa85a225acc0ca1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
@@ -57,5 +48,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 
 //ELIMINAR ADMINS DELETE
 
-DELETE http://localhost:3000/api/usuarios/6630c43bdd89149a4bd8579d
+DELETE http://localhost:3000/api/control/6630c43bdd89149a4bd8579d
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE

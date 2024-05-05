@@ -1,4 +1,4 @@
-const Usuario = require('../models/nosql/usuarios');
+const Usuario = require('../models/nosql/controlUsu');
 const { matchedData } = require('express-validator');
 
 /**
@@ -6,7 +6,31 @@ const { matchedData } = require('express-validator');
  * @param {*} req
  * @param {*} res
  */
-const getUsuarios = async (req, res) => {
+const getAdminRol = async (req, res) => {
+    try {
+        const { rol } = req.params; // Obtener el valor del parámetro 'rol'
+        console.log("Rol recibido:", rol);
+
+        // Buscar usuarios por rol usando una consulta a tu base de datos
+        const usuarios = await Usuario.find({ rol: rol });
+
+        if (usuarios.length === 0) {
+            return res.status(404).send("No se encontraron usuarios con este rol");
+        }
+
+        res.send(usuarios);
+    } catch(err) {
+        console.error(err);
+        res.status(500).send("Error al obtener usuarios por rol");
+    }
+}
+
+/**
+ * Obtener lista de usuarios
+ * @param {*} req
+ * @param {*} res
+ */
+const getMiembro = async (req, res) => {
     try {
         const user = req.user 
         const data = await Usuario.find({});
@@ -22,9 +46,17 @@ const getUsuarios = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-const crearUsuario = async (req, res) => {
+const crearMiembro = async (req, res) => {
     try {
         const usuarioData = req.body;
+
+        // Verificar que el campo 'rol' sea válido ('miembro' o 'admin')
+        const rolesValidos = ['miembro', 'admin'];
+        if (!rolesValidos.includes(usuarioData.rol)) {
+            return res.status(400).send("El campo 'rol' debe ser 'miembro' o 'admin'");
+        }
+
+        // Crear el usuario si el campo 'rol' es válido
         const usuario = await Usuario.create(usuarioData);
         res.status(201).send(usuario);
     } catch(err) {
@@ -38,7 +70,7 @@ const crearUsuario = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-const obtenerUsuarioPorId = async (req, res) => {
+const obtenerMiembroID = async (req, res) => {
     try {
         const { id } = matchedData(req);
         console.log("ID recibido:", id);
@@ -58,7 +90,7 @@ const obtenerUsuarioPorId = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-const obtenerUsuariosPorCiudad = async (req, res) => {
+const obtenerMiembroCiudad = async (req, res) => {
     try {
         const { ciudad } = req.params; // Obtener el parámetro de la ciudad desde la URL
         console.log("Ciudad recibida:", ciudad);
@@ -82,7 +114,7 @@ const obtenerUsuariosPorCiudad = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-const actualizarUsuario = async (req, res) => {
+const actualizarMiembro = async (req, res) => {
     try {
         const { id } = matchedData(req);
         const datosActualizados = req.body;
@@ -102,7 +134,7 @@ const actualizarUsuario = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-const eliminarUsuario = async (req, res) => {
+const eliminarMiembro = async (req, res) => {
     try {
         const { id } = req.params; // Obtener el ID del parámetro de la ruta
         const usuarioEliminado = await Usuario.findByIdAndDelete(id);
@@ -117,4 +149,4 @@ const eliminarUsuario = async (req, res) => {
 }
 
 
-module.exports = { getUsuarios, crearUsuario, obtenerUsuarioPorId, obtenerUsuariosPorCiudad, actualizarUsuario, eliminarUsuario };
+module.exports = { getAdminRol, getMiembro, crearMiembro, obtenerMiembroID, obtenerMiembroCiudad, actualizarMiembro, eliminarMiembro };

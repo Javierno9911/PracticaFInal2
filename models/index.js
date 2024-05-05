@@ -1,9 +1,8 @@
 const models = {
     //usersModel: require('./nosql/comercio')
     comercioModel: require('./nosql/comercio'),
-    usuarioModel: require('./nosql/usuarios'),
-    webComercioModel: require('./nosql/publicaciones'),
-    adminModel: require('./nosql/admin')
+    controlModel: require('./nosql/controlUsu'),
+    webComercioModel: require('./nosql/publicaciones')
 }
 module.exports = models
 

@@ -5,10 +5,10 @@ const usuarioSchema = new mongoose.Schema({
     type: String, 
     required: true 
   },
-  /*rol: { 
+  rol: { 
     type: String, 
     required: true,
-  },*/
+  },
   email: { 
     type: String, 
     required: true,
@@ -36,11 +36,4 @@ const usuarioSchema = new mongoose.Schema({
   } 
 });
 
-module.exports = mongoose.model("Usuario", usuarioSchema);
-
-/*
-Se define un nuevo modelo de Mongoose, este tendra todos los campos que necesita nuestra base de datos de comercio. Este esquema especifica la 
-estructura de los documentos que se guardarán en la colección de MongoDB asociada.
-
-Este modelo luego se usara para realizar las operaciones CRUD sobre el.
-*/
+module.exports = mongoose.model("Control", usuarioSchema);

@@ -3,16 +3,18 @@ const validateResults = require("../utils/handleValidator");
 
 /*
   nombre: { type: String, required: true },
+  rol: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  password:{ type: String, required: true},
-  edad:{ type: Number, required: true},
+  password: { type: String, required: true },
+  edad: { type: Number, required: true },
   ciudad: { type: String, required: true },
   intereses: { type: [String], required: true },
-  permiteRecibirOfertas: { type: Boolean, default: true} 
+  permiteRecibirOfertas: { type: Boolean, default: true } 
 */
 
-const validatorCreateUser = [
+const validatorCreateControl = [
     check("nombre").exists().notEmpty(),
+    check("rol").exists().notEmpty(),
     check("email").exists().notEmpty().isEmail(),
     check("password").exists().notEmpty(),
     check("edad").exists().notEmpty().isInt({ min: 0 }),
@@ -24,11 +26,11 @@ const validatorCreateUser = [
     }
 ];
 
-const validatorGetUser = [
+const validatorGetControl = [
     check("id").exists().notEmpty().isMongoId(),
     (req, res, next) => {
         return validateResults(req, res, next);
     }
 ];
 
-module.exports = { validatorCreateUser, validatorGetUser };
+module.exports = { validatorCreateControl, validatorGetControl };
