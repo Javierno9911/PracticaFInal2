@@ -15,9 +15,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 
 {
   "nombre": "Mi Comercio2",
-  "CIF": "A12345249",
+  "password":"123123132",
+  "CIF": "A12345266",
   "direccion": "Calle Ejemplo, 123",
-  "email": "comircio@example.com",
+  "email": "comircio2@example.com",
   "telefono": "123456789"
 }
 ###

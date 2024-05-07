@@ -1,4 +1,4 @@
-const { handleHttpError } = require("../utils/handleError")
+const { handleHttpError } = require("../utils/handleHttpError")
 /**
  * Array con los roles permitidos
  * @param {*} roles

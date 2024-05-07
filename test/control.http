@@ -25,7 +25,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 {
   "nombre": "Francis",
   "rol":"miembro",
-  "email": "otromas00@example.com",
+  "email": "otro100@example.com",
   "password": "123",
   "edad": 34,
   "ciudad": "Barcelona",
