@@ -1,5 +1,7 @@
 const Comercio = require('../models/nosql/comercio');
 const { matchedData } = require('express-validator');
+const { tokenSign } = require("../utils/handleJwt");
+const {handleHttpError} = require("../utils/handleHttpError");
 
 /**
  * Obtener lista de comercios
@@ -24,8 +26,15 @@ const getComercios = async (req, res) => {
 const crearComercio = async (req, res) => {
     try {
         const comercioData = req.body;
+
+        // Crear el comercio con los datos recibidos
         const comercio = await Comercio.create(comercioData);
-        res.status(201).send(comercio);
+
+        // Generar un token JWT para el comercio creado
+        const token = await tokenSign(comercio);
+
+        // Devolver el comercio junto con el token JWT en la respuesta
+        res.status(201).send({ comercio, token });
     } catch(err) {
         console.error(err);
         res.status(500).send("Error al crear un nuevo comercio");
@@ -39,12 +48,20 @@ const crearComercio = async (req, res) => {
  */
 const obtenerComercioPorId = async (req, res) => {
     try {
-        const {id} = matchedData(req);
+        const { id } = matchedData(req);
+        
+        // Buscar el comercio por su ID en la base de datos
         const comercio = await Comercio.findById(id);
+        
         if (!comercio) {
             return res.status(404).send("Comercio no encontrado");
         }
-        res.send(comercio);
+        
+        // Generar un token JWT para el comercio encontrado
+        const token = await tokenSign(comercio);
+
+        // Devolver el comercio junto con el token JWT en la respuesta
+        res.send({ comercio, token });
     } catch(err) {
         console.error(err);
         res.status(500).send("Error al obtener el comercio");
