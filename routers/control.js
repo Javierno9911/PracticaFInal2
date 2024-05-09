@@ -18,7 +18,7 @@ router.get("/ciudad/:ciudad", obtenerMiembroCiudad);
 router.get("/intereses/:interes", obtenerMiembroPorIntereses);
 
 // Ruta para crear usuarios.
-router.post("/", validatorCreateControl, crearMiembro);
+router.post("/register", validatorCreateControl, crearMiembro);
 
 // Ruta para actualizar un usuario por su ID
 router.put("/:id", validatorGetControl,actualizarMiembro);

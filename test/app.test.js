@@ -1,33 +1,52 @@
+/*
+.send({
+    "name": "Menganito",
+    "rol":"miembro",
+    "email": "user25@testt.com" ,
+    "password": "HolaMundo.01",
+    "edad": 20,
+    "ciudad": "Barcelona",
+    "intereses": ["Padel", "Fauna"],
+    "permiteRecibirOfertas": true 
+})
+*/
 const request = require('supertest');
-const app = require('../index');
+const app = require('../index')
 
 describe('users', () => {
     var token = ""
     var id = ""
-    it('should register a user' , async () => {
+
+    it('should register a user', async () => {
         const response = await request(app)
-        .post('/api/auth/register' )
-        .send({"name": "Menganito","age": 20,"email": "user25@test.com" ,"password": "HolaMundo.01" })
-        .set('Accept', 'application/json' )
-        .expect(200)
-        expect(response.body.user.email).toEqual('user25@test.com' )
-        expect(response.body.user.role).toEqual('user')
-        token = response.body.tokenid = response.body.user._id})
-        it('should get the users' , async () => {
-            const response = await request(app)
-            .get('/api/auth/users' )
-            .auth(token, { type: 'bearer' })
-            .set('Accept', 'application/json' )
+            .post('/api/control/register')
+            .send({
+                "name": "Menganito",
+                "rol":"miembro",
+                "email": "user25@testt.com" ,
+                "password": "HolaMundo.01",
+                "edad": 20,
+                "ciudad": "Barcelona",
+                "intereses": ["Padel", "Fauna"],
+                "permiteRecibirOfertas": true 
+            })
+            .set('Accept', 'application/json')
             .expect(200)
-            expect(response.body.pop().name).toEqual('Menganito')
-        }
-    );
-    it('should delete a user' , async () => {
-        const response = await request(app)
-        .delete('/api/auth/users/' +id)
-        .auth(token, { type: 'bearer' })
-        .set('Accept', 'application/json' )
-        .expect(200)
-        expect(response.body.acknowledged ).toEqual(true)
+        expect(response.body.control.name).toEqual('Menganito')
+        expect(response.body.control.email).toEqual('user25@test.com')
+        expect(response.body.control.rol).toEqual('miembro')
+
+        token = response.body.token
+        id = response.body.control._id
     })
+
+    it('should delete a user', async () => {
+        const response = await request(app)
+            .delete('/api/control/'+id)
+            .auth(token, { type: 'bearer' })
+            .set('Accept', 'application/json')
+            .expect(200)
+        expect(response.body.acknowledged).toEqual(true)
+    })
+
 })
