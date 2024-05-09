@@ -1,120 +1,352 @@
-const swaggerJsdoc = require("swagger-jsdoc")
+const swaggerJsdoc = require('swagger-jsdoc');
 
-const options = {
-    definition: {
-      openapi: "3.0.3",
-      info: {
-        title: "PRACTICA FINAL",
-        version: "0.0.1",
-        license: {
-          name: "MIT",
-          url: "https://spdx.org/licenses/MIT.html",
-        },
-        contact: {
-          name: "u-tad",
-          url: "https://u-tad.com",
-          email: "javier.nunez@u-tad.com",
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: '3.0.3',
+    info: {
+      title: 'API Documentation',
+      version: '1.0.0',
+    },
+    contact: {
+      name: 'u-tad',
+      url: 'https://u-tad.com',
+      email: 'javier.nunez@u-tad.com',
+    },
+    servers: [
+      { url: 'http://localhost:3000' }
+    ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer'
         },
       },
-      servers: [
-        {
-          url: "http://localhost:3000",
+      schemas: {
+        Control_Usuarios: {
+          type: 'object',
+          required: ['name', 'rol', 'email', 'password', 'edad', 'ciudad', 'intereses', 'permiteRecibirOfertas'],
+          properties: {
+            name: {
+              type: 'string',
+              example: 'Menganito'
+            },
+            rol: {
+              type: 'string',
+              example: 'miembro'
+            },
+            email: {
+              type: 'string',
+              example: 'miemail@google.com'
+            },
+            password: {
+              type: 'string'
+            },
+            edad: {
+              type: 'integer',
+              example: 20
+            },
+            ciudad: {
+              type: 'string'
+            },
+            intereses: {
+              type: 'array',
+              items: {
+                type: 'string'
+              }
+            },
+            permiteRecibirOfertas: {
+              type: 'boolean',
+              example: true
+            },
+          },
         },
-      ],
-      components: {
-        securitySchemes: {
-            bearerAuth: {
-                type: "http",
-                scheme: "bearer"
+        Comercios: {
+          type: 'object',
+          required: ['name', 'cif', 'direccion', 'email', 'telefono'],
+          properties: {
+            name: {
+              type: 'string',
+              example: 'Menganito'
             },
+            cif: {
+              type: 'string',
+            },
+            direccion: {
+              type: 'string',
+              example: 'miemail@google.com'
+            },
+            email: {
+              type: 'string',
+              example: 'miemail@google.com'
+            },
+            telefono: {
+              type: 'integer',
+              example: 601377805
+            },
+          },
         },
-        schemas:{
-            Usuarios: {
-                type: "object",
-                required: ["name","rol","email","password", "edad", "ciudad", "intereses", "permiteRecibirOfertas"],
-                properties: {
-                    name: {
-                        type: "string",
-                        example: "Menganito"
-                    },
-                    rol: {
-                      type: "string",
-                      example: "miembro"
-                    },
-                    email: {
-                      type: "string",
-                      example: "miemail@google.com"
-                    },
-                    password: {
-                        type: "string"
-                    },
-                    edad: {
-                        type: "integer",
-                        example: 20
-                    },
-                    ciudad: {
-                      type: "string"
-                    },
-                    intereses:{
-                      type: "[string]"
-                    },
-                    //Boolean
-                    permiteRecibirOfertas:{
-                      type: "Boolean",
-                      example: "True"
-                    },
-                },
+        Publicaciones: {
+          type: 'object',
+          required: ['name', 'age', 'email', 'password'],
+          properties: {
+            name: {
+              type: 'string',
+              example: 'Menganito'
             },
-            Comercios: {
-              type: "object",
-              required: ["name", "cif","direccion", "email", "telefono"],
-              properties: {
-                  name: {
-                      type: "string",
-                      example: "Menganito"
-                  },
-                  cif: {
-                      type: "string",
-                  },
-                  direccion: {
-                    type: "string",
-                    example: "miemail@google.com"
-                  },
-                  email: {
-                      type: "string",
-                      example: "miemail@google.com"
-                  },
-                  telefono: {
-                      type: "integer",
-                      example: 601377805
-                  },
-              },
+            age: {
+              type: 'integer',
+              example: 20
             },
-            Publicaciones: {
-              type: "object",
-              required: ["name", "age", "email", "password"],
-              properties: {
-                  name: {
-                      type: "string",
-                      example: "Menganito"
-                  },
-                  age: {
-                      type: "integer",
-                      example: 20
-                  },
-                  email: {
-                      type: "string",
-                      example: "miemail@google.com"
-                  },
-                  password: {
-                      type: "string"
-                  },
-              },
-            }
+            email: {
+              type: 'string',
+              example: 'miemail@google.com'
+            },
+            password: {
+              type: 'string'
+            },
+          },
         },
       },
     },
-    apis: ["./routes/*.js"],
-  };
-  
-module.exports = swaggerJsdoc(options)
+  },
+  apis: [], // Deja esto vacío para definir las rutas manualmente
+};
+
+const swaggerSpecs = swaggerJsdoc(swaggerOptions);
+
+swaggerSpecs.paths['/api/control'] = {
+  get: {
+    summary: 'Obtener todos los usuario',
+    responses: {
+      200: {
+        description: 'OK',
+      },
+      500: {
+        description: 'Error del servidor',
+      },
+    },
+  },
+  post: {
+    summary: 'Crear un nuevo usuario',
+    requestBody: {
+      required: true,
+      content: {
+        'application/json': {
+          schema: {
+            type: 'object',
+            properties: {
+              nombre: {
+                type: 'string',
+                example: 'Francisco'
+              },
+              rol: {
+                type: 'string',
+                example: 'miembro'
+              },
+              email: {
+                type: 'string',
+                example: 'dadlladd0@example.com'
+              },
+              password: {
+                type: 'string',
+                example: '123'
+              },
+              edad: {
+                type: 'integer',
+                example: 34
+              },
+              ciudad: {
+                type: 'string',
+                example: 'Barcelona'
+              },
+              intereses: {
+                type: 'array',
+                items: {
+                  type: 'string'
+                },
+                example: ['Padel', 'Fauna']
+              },
+              permiteRecibirOfertas: {
+                type: 'boolean',
+                example: true
+              }
+            },
+            required: ['nombre', 'rol', 'email', 'password', 'edad', 'ciudad', 'intereses', 'permiteRecibirOfertas']
+          }
+        }
+      }
+    },
+    responses: {
+      201: {
+        description: 'Usuario creado exitosamente'
+      },
+      400: {
+        description: 'Error en la solicitud'
+      }
+    }
+  }
+};
+swaggerSpecs.paths['/api/control/rol/{rol}'] = {
+  get: {
+    summary: 'Obtener admins o miembros',
+    responses: {
+      200: {
+        description: 'OK',
+      },
+      500: {
+        description: 'Error del servidor',
+      },
+    },
+  },
+};
+
+swaggerSpecs.paths['/api/control/rol/{rol}'] = {
+  get: {
+    summary: 'Obtener todos los usuarios',
+    responses: {
+      200: {
+        description: 'OK',
+      },
+      500: {
+        description: 'Error del servidor',
+      },
+    },
+  },
+};
+
+swaggerSpecs.paths['/api/control/{id}'] = {
+  get: {
+    summary: 'Obtener todos los usuarios',
+    responses: {
+      200: {
+        description: 'OK',
+      },
+      500: {
+        description: 'Error del servidor',
+      },
+    },
+  },
+  put: {
+    summary: 'Actualizar un usuario por su ID',
+    parameters: [
+      {
+        in: 'path',
+        name: 'id',
+        schema: {
+          type: 'string',
+        },
+        required: true,
+        description: 'ID del usuario',
+      },
+    ],
+    requestBody: {
+      required: true,
+      content: {
+        'application/json': {
+          schema: {
+            type: 'object',
+            properties: {
+              nombre: {
+                type: 'string',
+                example: 'Nuevo nombre'
+              },
+              rol: {
+                type: 'string',
+                example: 'admin'
+              },
+              email: {
+                type: 'string',
+                example: 'nuevo@example.com'
+              },
+              password: {
+                type: 'string',
+                example: 'nuevacontraseña'
+              },
+              edad: {
+                type: 'integer',
+                example: 31
+              },
+              ciudad: {
+                type: 'string',
+                example: 'Nueva Ciudad'
+              },
+              intereses: {
+                type: 'array',
+                items: {
+                  type: 'string'
+                },
+                example: ['música', 'viajes']
+              },
+              permiteRecibirOfertas: {
+                type: 'boolean',
+                example: false
+              }
+            },
+            required: ['nombre', 'rol', 'email', 'password', 'edad', 'ciudad', 'intereses', 'permiteRecibirOfertas']
+          }
+        }
+      }
+    },
+    responses: {
+      200: {
+        description: 'Usuario actualizado exitosamente'
+      },
+      404: {
+        description: 'Usuario no encontrado'
+      }
+    }
+  },
+  delete: {
+    summary: 'Eliminar un usuario por su ID',
+    parameters: [
+      {
+        in: 'path',
+        name: 'id',
+        schema: {
+          type: 'string',
+        },
+        required: true,
+        description: 'ID del usuario',
+      },
+    ],
+    responses: {
+      200: {
+        description: 'Usuario eliminado exitosamente'
+      },
+      404: {
+        description: 'Usuario no encontrado'
+      }
+    }
+  }
+};
+
+swaggerSpecs.paths['/api/control/ciudad/{ciudad}'] = {
+  get: {
+    summary: 'Obtener todos los usuarios',
+    responses: {
+      200: {
+        description: 'OK',
+      },
+      500: {
+        description: 'Error del servidor',
+      },
+    },
+  },
+};
+
+swaggerSpecs.paths['/api/control/intereses/{interes}'] = {
+  get: {
+    summary: 'Obtener todos los usuarios',
+    responses: {
+      200: {
+        description: 'OK',
+      },
+      500: {
+        description: 'Error del servidor',
+      },
+    },
+  },
+};
+
+module.exports = swaggerSpecs;

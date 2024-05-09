@@ -1,8 +1,9 @@
 const jwt = require("jsonwebtoken")
 
 /**
- * El objeto del usuario
- * @param {*} user 
+ * Generar token JWT para un usuario
+ * @param {*} user Objeto de usuario
+ * @returns Token JWT generado
  */
 const tokenSign = async (user) => {
     const sign = jwt.sign(
@@ -19,8 +20,9 @@ const tokenSign = async (user) => {
 }
 
 /**
- * Token se sesión
- * @param {*} tokenJwt 
+ * Verificar y decodificar un token JWT
+ * @param {*} tokenJwt Token JWT a verificar
+ * @returns Datos decodificados del token o null si hay un error
  */
 const verifyToken = async (tokenJwt) => {
     try {

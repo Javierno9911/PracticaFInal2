@@ -14,7 +14,7 @@ const getComercios = async (req, res) => {
         res.send(data);
     } catch(err) {
         console.error(err);
-        res.status(500).send("Error al obtener la lista de comercios");
+        handleHttpError(res, "ERROR_OBTENER_COMERCIO");
     }
 }
 
@@ -37,7 +37,7 @@ const crearComercio = async (req, res) => {
         res.status(201).send({ comercio, token });
     } catch(err) {
         console.error(err);
-        res.status(500).send("Error al crear un nuevo comercio");
+        handleHttpError(res, "ERROR_CREAR_COMERCIO");
     }
 }
 
@@ -64,7 +64,7 @@ const obtenerComercioPorId = async (req, res) => {
         res.send({ comercio, token });
     } catch(err) {
         console.error(err);
-        res.status(500).send("Error al obtener el comercio");
+        handleHttpError(res, "ERROR_LOGIN_USER");
     }
 }
 
@@ -84,7 +84,7 @@ const actualizarComercio = async (req, res) => {
         res.send(comercioActualizado);
     } catch(err) {
         console.error(err);
-        res.status(500).send("Error al actualizar el comercio");
+        handleHttpError(res, "ERROR_EDITAR_USER");
     }
 }
 
@@ -103,7 +103,7 @@ const eliminarComercio = async (req, res) => {
         res.send("Comercio eliminado correctamente");
     } catch(err) {
         console.error(err);
-        res.status(500).send("Error al eliminar el comercio");
+        handleHttpError(res, "ERROR_ELIMINAR_USER");
     }
 }
 

@@ -3,7 +3,6 @@ const { matchedData } = require('express-validator');
 const { tokenSign } = require("../utils/handleJwt");
 const {handleHttpError} = require("../utils/handleHttpError");
 
-
 /**
  * Obtener rol Admin
  * @param {*} req

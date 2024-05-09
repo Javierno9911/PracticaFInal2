@@ -33,10 +33,15 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+console.log("Especificaciones de Swagger:", swaggerSpecs);
+
+// Configuración de Swagger UI
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+/*
 app.use("/api-docs",
     swaggerUi.serve,
     swaggerUi.setup(swaggerSpecs)
-)
+)*/
 
 app.use("/api", require("./routers"))
 
