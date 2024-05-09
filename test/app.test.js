@@ -1,5 +1,6 @@
 const request = require('supertest');
-const app = require('../app')
+const app = require('../index');
+
 describe('users', () => {
     var token = ""
     var id = ""

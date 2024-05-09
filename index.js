@@ -17,8 +17,6 @@ morganBody(app, {
     stream: loggerStream
 })
 
-
-
 //Le decimos a la app de express() que use cors para evitar el error Cross-Domain (XD)
 app.use(cors())
 app.use(express.json())
@@ -39,5 +37,3 @@ app.listen(port, () => {
 dbConnect()
 
 module.exports = app
-
-//212.0.109.168
