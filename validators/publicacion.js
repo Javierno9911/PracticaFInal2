@@ -27,6 +27,9 @@ const validatorCreateItem = [
     check("actividad").exists().notEmpty(),
     check("titulo").exists().notEmpty(),
     check("resumen").exists().notEmpty(),
+    check("textos").exists().notEmpty(),
+    check("fotos").exists().notEmpty(),
+    check("datosNoModificables").exists().notEmpty(),
     (req, res, next) => {
         return validateResults(req, res, next);
     }

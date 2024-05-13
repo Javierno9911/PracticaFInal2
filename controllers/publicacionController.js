@@ -35,6 +35,42 @@ const crearPaginaWebComercio = async (req, res) => {
 }
 
 /**
+ * Inserta reseñas
+ * @param {*} req 
+ * @param {*} res 
+ */
+// Función para manejar solicitudes PATCH de actualización parcial
+const crearReseña = async (req, res) => {
+    try {
+        const { id } = req.params; // ID del documento WebComercio a actualizar
+        const { scoring, numeroPuntuaciones, resenhas } = req.body.datosNoModificables;
+
+        const updateData = {};
+        if (scoring !== undefined) {
+            updateData['datosNoModificables.scoring'] = scoring;
+        }
+        if (numeroPuntuaciones !== undefined) {
+            updateData['datosNoModificables.numeroPuntuaciones'] = numeroPuntuaciones;
+        }
+        if (resenhas !== undefined) {
+            updateData['datosNoModificables.resenhas'] = resenhas;
+        }
+
+        const paginaWebActualizada = await WebComercio.findByIdAndUpdate(id, updateData, { new: true });
+
+        if (!paginaWebActualizada) {
+            return res.status(404).send("Página web de comercio no encontrada");
+        }
+
+        res.send(paginaWebActualizada);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error al actualizar los datos no modificables de la página web de comercio");
+    }
+};
+
+
+/**
  * Obtener una página web de comercio por su ID
  * @param {*} req
  * @param {*} res
@@ -129,15 +165,16 @@ const actualizarPaginaWebComercio = async (req, res) => {
 const eliminarPaginaWebComercio = async (req, res) => {
     try {
         const { id } = req.params; // Obtener el ID del parámetro de la ruta
+        console.log('ID a eliminar:', id); // Verificar el ID en la consola
         const paginaWebEliminada = await WebComercio.findByIdAndDelete(id);
         if (!paginaWebEliminada) {
             return res.status(404).send("Página web de comercio no encontrada");
         }
         res.send("Página web de comercio eliminada correctamente");
     } catch(err) {
-        console.error(err);
+        console.error('Error al eliminar la página web de comercio:', err);
         res.status(500).send("Error al eliminar la página web de comercio");
     }
 }
 
-module.exports = { getPaginasWebComercio, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, obtenerPaginaWebComercioPorCiudad,obtenerPaginasPorActividad ,actualizarPaginaWebComercio, eliminarPaginaWebComercio  };
+module.exports = { getPaginasWebComercio, crearReseña, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, obtenerPaginaWebComercioPorCiudad,obtenerPaginasPorActividad ,actualizarPaginaWebComercio, eliminarPaginaWebComercio  };

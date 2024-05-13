@@ -1,10 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const { getPaginasWebComercio, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, obtenerPaginaWebComercioPorCiudad,obtenerPaginasPorActividad,actualizarPaginaWebComercio, eliminarPaginaWebComercio  } = require("../controllers/publicacionController");
+const { getPaginasWebComercio, crearReseña, crearPaginaWebComercio, obtenerPaginaWebComercioPorId, obtenerPaginaWebComercioPorCiudad,obtenerPaginasPorActividad,actualizarPaginaWebComercio, eliminarPaginaWebComercio  } = require("../controllers/publicacionController");
 const { validatorCreateItem, validatorGetItem } = require("../validators/publicacion")
+const authMiddleware = require("../middleware/session")
+const checkRol = require("../middleware/rol")
 
 // Ruta para obtener todas las páginas web de comercios
 router.get("/", getPaginasWebComercio);
+
+router.patch("/:id", validatorGetItem, crearReseña);
 
 // Ruta para obtener una página web de comercio por su ID
 router.get("/:id", validatorGetItem , obtenerPaginaWebComercioPorId);

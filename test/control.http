@@ -4,7 +4,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 ###
 
 GET http://localhost:3000/api/control/663c7d84744141693afdee23
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNjN2Q4NDc0NDE0MTY5M2FmZGVlMjMiLCJpYXQiOjE3MTUyNDAzMjQsImV4cCI6MTcxNTI0NzUyNH0.dtCh2zj5Mv0vC5gbksNpBXJWInGauffy4cnCPvvRckc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
 GET http://localhost:3000/api/control/ciudad/Barcelona
@@ -26,7 +26,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 {
   "nombre": "Francisco",
   "rol":"miembro",
-  "email": "dadd0@example.com",
+  "email": "dadd@example.com",
   "password": "123",
   "edad": 34,
   "ciudad": "Barcelona",
@@ -35,14 +35,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 }
 ###
 
-PUT http://localhost:3000/api/control/662a79881fa85a225acc0ca1
+PUT http://localhost:3000/api/control/663dead1ea5b56fcc125c28f
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
 {
   "nombre": "Nuevo nombre",
-  "rol":"admin",
-  "email": "nuevo@example.com",
+  "rol":"miembro",
+  "email": "nuevooo@example.com",
   "password": "nuevacontraseña",
   "edad": 31,
   "ciudad": "Nueva Ciudad",
@@ -53,5 +53,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 
 //ELIMINAR ADMINS DELETE
 
-DELETE http://localhost:3000/api/control/6637b1f4adc8b2289b839f42
+DELETE http://localhost:3000/api/control/6637b0962d9a7d02509eaf9d
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE

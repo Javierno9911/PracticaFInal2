@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const { getComercios, crearComercio, obtenerComercioPorId, actualizarComercio, eliminarComercio} = require("../controllers/comercioController");
 const { validatorCreateComercio, validatorGetComercio } = require("../validators/comercio")
+const authMiddleware = require("../middleware/session")
+const checkRol = require("../middleware/rol")
 
 // Ruta para obtener todos los comercios
 router.get("/", getComercios);

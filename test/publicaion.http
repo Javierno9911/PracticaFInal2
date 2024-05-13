@@ -7,7 +7,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 
 //TABLA DE PUBLICAIONES CON ID
 
-GET http://localhost:3000/api/publicaciones/662a39636372d3e135442764
+GET http://localhost:3000/api/publicaciones/662a74607df5e715f74eb535
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
@@ -19,14 +19,14 @@ GET http://localhost:3000/api/publicaciones/ciudad/Ciudad de Ejemplo
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
-//TABLA DE PUBLICAIONES
+//RESEÑAS A PUBLCIAIONES DE PUBLICAIONES
 
 POST http://localhost:3000/api/publicaciones
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
 {
-  "comercioId": "662a2fad777a76a05dba641d",
+  "comercioId": "662a2fad777a76a05dba6419",
   "tokenJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
   "ciudad": "Ciudad de Ejemplo",
   "actividad": "Padel",
@@ -49,7 +49,55 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
     ]
   }
 }
+###
 
+
+PATCH http://localhost:3000/api/publicaciones/662a74607df5e715f74eb535
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+
+{
+  "datosNoModificables": {
+    "scoring": 10,
+    "numeroPuntuaciones": 5,
+    "resenhas": [
+      "Muy buen servicio",
+      "Nueva reseña 2"
+    ]
+  }
+}
+###
 //EDICION PUBLICAIONES
+PUT http://localhost:3000/api/publicaciones/662a74607df5e715f74eb535
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
+{
+  "comercioId": "662a2fad777a76a05dba6419",
+  "tokenJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+  "ciudad": "Ciudad de Ejemplo",
+  "actividad": "Padel",
+  "titulo": "Título de la Página Web",
+  "resumen": "Resumen de la Página Web",
+  "textos": [
+    "Texto adicional 1",
+    "Texto adicional 2"
+  ],
+  "fotos": [
+    "URL de la foto 1",
+    "URL de la foto 2"
+  ],
+  "datosNoModificables": {
+    "scoring": 0,
+    "numeroPuntuaciones": 0,
+    "resenhas": [
+      "Reseña 1",
+      "Reseña 2"
+    ]
+  }
+}
+###
 //ELIMINAR PUBLICAIONES
+
+DELETE http://localhost:3000/api/publicaciones/6641e412575a9319b0fb89b0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
