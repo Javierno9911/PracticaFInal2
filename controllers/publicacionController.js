@@ -1,7 +1,7 @@
 const WebComercio = require('../models/nosql/publicaciones');
 const { matchedData } = require('express-validator');
 const { tokenSign } = require("../utils/handleJwt");
-const {handleHttpError} = require("../utils/handleHttpError");
+//const {handleHttpError} = require("../utils/handleHttpError");
 
 /**
  * Obtener lista de páginas web de comercios
@@ -42,7 +42,7 @@ const crearPaginaWebComercio = async (req, res) => {
 // Función para manejar solicitudes PATCH de actualización parcial
 const crearReseña = async (req, res) => {
     try {
-        const { id } = req.params; // ID del documento WebComercio a actualizar
+        const { id } = req.params;
         const { scoring, numeroPuntuaciones, resenhas } = req.body.datosNoModificables;
 
         const updateData = {};

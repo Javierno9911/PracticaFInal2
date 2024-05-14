@@ -24,11 +24,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 ###
 
 
-//EDICION USUARIO
+//COMERCIO TOKEN EDITADO
 
-PUT http://localhost:3000/api/comercio/662a309d777a76a05dba6421
+PUT http://localhost:3000/api/comercio/663a0232b103fc9c69821e2b
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNhMDIzMmIxMDNmYzljNjk4MjFlMmIiLCJpYXQiOjE3MTU2ODIzMzYsImV4cCI6MTcxNTY4OTUzNn0.9M7Fo3kXfvM4CUeaR3uDp-dpxNniMR83vggmmbsFaMk
 
 {
   "nombre": "Nuevo nombre",

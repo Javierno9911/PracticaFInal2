@@ -19,8 +19,6 @@ GET http://localhost:3000/api/publicaciones/ciudad/Ciudad de Ejemplo
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
-//RESEÑAS A PUBLCIAIONES DE PUBLICAIONES
-
 POST http://localhost:3000/api/publicaciones
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
@@ -51,10 +49,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 }
 ###
 
+//HECHO 
 
 PATCH http://localhost:3000/api/publicaciones/662a74607df5e715f74eb535
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQzM2IzZjcwMjJlOGE5ZWJjYzhhYWYiLCJpYXQiOjE3MTU2ODIxMTEsImV4cCI6MTcxNTY4OTMxMX0.wJyJ0Z6XU28jV9MtCWPMPiLgi8GqF07JAFAAhGHUPho
 
 {
   "datosNoModificables": {
@@ -67,13 +66,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
   }
 }
 ###
-//EDICION PUBLICAIONES
+//HECHO
 PUT http://localhost:3000/api/publicaciones/662a74607df5e715f74eb535
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQzM2IzZjcwMjJlOGE5ZWJjYzhhYWYiLCJpYXQiOjE3MTU2ODIxMTEsImV4cCI6MTcxNTY4OTMxMX0.wJyJ0Z6XU28jV9MtCWPMPiLgi8GqF07JAFAAhGHUPho
 
 {
-  "comercioId": "662a2fad777a76a05dba6419",
+  "comercioId": "662a2fad777a76a05dba6410",
   "tokenJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
   "ciudad": "Ciudad de Ejemplo",
   "actividad": "Padel",

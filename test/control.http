@@ -19,6 +19,8 @@ GET http://localhost:3000/api/control/rol/admin
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
+//MIEMBRO
+
 POST http://localhost:3000/api/control/register
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
@@ -26,7 +28,25 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 {
   "nombre": "Francisco",
   "rol":"miembro",
-  "email": "dadd@example.com",
+  "email": "daadadd@example.com",
+  "password": "123",
+  "edad": 34,
+  "ciudad": "Barcelona",
+  "intereses": ["Padel", "Fauna"],
+  "permiteRecibirOfertas": true
+}
+###
+
+//ADMIN
+
+POST http://localhost:3000/api/control/register
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+
+{
+  "nombre": "Francisco",
+  "rol":"admin",
+  "email": "daddadafsfd@example.com",
   "password": "123",
   "edad": 34,
   "ciudad": "Barcelona",
