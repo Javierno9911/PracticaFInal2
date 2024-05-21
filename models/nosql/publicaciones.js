@@ -4,11 +4,8 @@ const webSchema = new mongoose.Schema({
   comercioId: {
     type: mongoose.Schema.Types.ObjectId, // Referencia al comercio al que pertenece esta página web
     ref: 'Comercio', // Nombre del modelo al que hace referencia
-    required: true
-  },
-  tokenJWT: {
-    type: String,
-    required: true
+    required: true,
+    unique: true
   },
   ciudad: {
     type: String,

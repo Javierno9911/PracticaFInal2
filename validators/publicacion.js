@@ -22,7 +22,6 @@ const validateResults = require("../utils/handleValidator");
 
 const validatorCreateItem = [
     check("comercioId").exists().notEmpty().isMongoId(),
-    check("tokenJWT").exists().notEmpty(),
     check("ciudad").exists().notEmpty(),
     check("actividad").exists().notEmpty(),
     check("titulo").exists().notEmpty(),

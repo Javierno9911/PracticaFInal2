@@ -33,7 +33,7 @@ const usuarioSchema = new mongoose.Schema({
   permiteRecibirOfertas: {
     type: Boolean, // Utiliza el tipo Boolean para indicar si el usuario permite recibir ofertas
     default: true // Establece un valor predeterminado
-  } 
+  }
 });
 
 module.exports = mongoose.model("Control", usuarioSchema);

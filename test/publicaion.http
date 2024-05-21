@@ -4,30 +4,31 @@
 GET http://localhost:3000/api/publicaciones
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
+DELETE http://localhost:3000/api/publicaciones/664ccba6936c1f98133f4f40
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 
 //TABLA DE PUBLICAIONES CON ID
 
-GET http://localhost:3000/api/publicaciones/662a74607df5e715f74eb535
+GET http://localhost:3000/api/publicaciones/66472091b93255ddbf80781d
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
-GET http://localhost:3000/api/publicaciones/actividad/Padel
+GET http://localhost:3000/api/publicaciones/actividad/Informatica
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
-GET http://localhost:3000/api/publicaciones/ciudad/Ciudad de Ejemplo
+GET http://localhost:3000/api/publicaciones/ciudad/Madrid
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
 POST http://localhost:3000/api/publicaciones
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRjYzBhNzgxNjBlZTcxZjA5Mjk5MGYiLCJpYXQiOjE3MTYzMDYwODcsImV4cCI6MTcxNjMxMzI4N30.67kvns78pb1IItZrzRmxNcezPYfxI5I7AkDe6OzQiuU
 
 {
-  "comercioId": "662a2fad777a76a05dba6419",
-  "tokenJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-  "ciudad": "Ciudad de Ejemplo",
-  "actividad": "Padel",
+  "comercioId": "664753864890cd274155d413",
+  "ciudad": "Madrid",
+  "actividad": "Informatica",
   "titulo": "Título de la Página Web",
   "resumen": "Resumen de la Página Web",
   "textos": [
@@ -51,7 +52,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 
 //HECHO 
 
-PATCH http://localhost:3000/api/publicaciones/662a74607df5e715f74eb535
+PATCH http://localhost:3000/api/publicaciones/66470ad7631828aec71ad084
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQzM2IzZjcwMjJlOGE5ZWJjYzhhYWYiLCJpYXQiOjE3MTU2ODIxMTEsImV4cCI6MTcxNTY4OTMxMX0.wJyJ0Z6XU28jV9MtCWPMPiLgi8GqF07JAFAAhGHUPho
 
@@ -66,14 +67,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQzM2IzZ
   }
 }
 ###
-//HECHO
-PUT http://localhost:3000/api/publicaciones/662a74607df5e715f74eb535
+
+PUT http://localhost:3000/api/publicaciones/6637d07bdb3edf2c58427be9
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQzM2IzZjcwMjJlOGE5ZWJjYzhhYWYiLCJpYXQiOjE3MTU2ODIxMTEsImV4cCI6MTcxNTY4OTMxMX0.wJyJ0Z6XU28jV9MtCWPMPiLgi8GqF07JAFAAhGHUPho
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRjYzBhNzgxNjBlZTcxZjA5Mjk5MGYiLCJpYXQiOjE3MTYzMDYwODcsImV4cCI6MTcxNjMxMzI4N30.67kvns78pb1IItZrzRmxNcezPYfxI5I7AkDe6OzQiuU
 
 {
-  "comercioId": "662a2fad777a76a05dba6410",
-  "tokenJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+  "comercioId": "664753864890cd274155d413",
   "ciudad": "Ciudad de Ejemplo",
   "actividad": "Padel",
   "titulo": "Título de la Página Web",
@@ -98,5 +98,3 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQzM2IzZ
 ###
 //ELIMINAR PUBLICAIONES
 
-DELETE http://localhost:3000/api/publicaciones/6641e412575a9319b0fb89b0
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE

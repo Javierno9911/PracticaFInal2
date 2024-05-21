@@ -59,7 +59,13 @@ const getMiembro = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-const crearMiembro= async (req, res) => {
+/*
+        // Guardar el token en el usuario
+        usuario.token = token;
+        await usuario.save();
+
+*/
+const crearMiembro = async (req, res) => {
     try {
         const usuarioData = req.body;
 
@@ -70,14 +76,18 @@ const crearMiembro= async (req, res) => {
         }
 
         // Crear el usuario si el campo 'rol' es válido
-        const usuario = await Usuario.create(usuarioData);
+        const usuario = new Usuario(usuarioData);
 
         // Generar un token JWT para el usuario recién creado
         const token = await tokenSign(usuario);
 
+        // Guardar el token en el usuario
+        usuario.token = token;
+        await usuario.save();
+
         // Devolver el token junto con los datos del usuario en la respuesta
         res.status(201).send({ usuario, token });
-    } catch(err) {
+    } catch (err) {
         console.error(err);
         handleHttpError(res, "ERROR_REGISTER_USER");
     }
@@ -91,7 +101,7 @@ const obtenerMiembroID = async (req, res) => {
     try {
         const { id } = matchedData(req);
         console.log("ID recibido:", id);
-        
+
         // Buscar usuario por ID en la base de datos
         const usuario = await Usuario.findById(id);
 
@@ -99,15 +109,12 @@ const obtenerMiembroID = async (req, res) => {
             return res.status(404).send("Usuario no encontrado");
         }
 
-        // Generar un token JWT para el usuario encontrado
-        const token = await tokenSign(usuario);
-
         // Remover el campo de contraseña del usuario (si es necesario)
         usuario.password = undefined; // Opcional: Eliminar el campo de contraseña del usuario antes de enviarlo
 
-        // Enviar respuesta con el usuario y el token JWT
-        res.send({ usuario, token });
-    } catch(err) {
+        // Enviar respuesta con el usuario y el token JWT almacenado
+        res.send({ usuario, token: usuario.token });
+    } catch (err) {
         console.error(err);
         handleHttpError(res, "ERROR_OBTENER_USER");
     }
@@ -170,16 +177,22 @@ const actualizarMiembro = async (req, res) => {
     try {
         const { id } = matchedData(req);
         const datosActualizados = req.body;
+
+        // Verificar que el ID del token coincida con el ID de la ruta
+        if (req.user._id.toString() !== id) {
+            return res.status(403).send("No autorizado para actualizar este usuario");
+        }
+
         const usuarioActualizado = await Usuario.findByIdAndUpdate(id, datosActualizados, { new: true });
         if (!usuarioActualizado) {
             return res.status(404).send("Usuario no encontrado");
         }
         res.send(usuarioActualizado);
-    } catch(err) {
+    } catch (err) {
         console.error(err);
         handleHttpError(res, "ERROR_ACTUALIZAR_USER");
     }
-}
+};
 
 /**
  * Eliminar un usuario por su ID

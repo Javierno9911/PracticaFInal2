@@ -79,6 +79,8 @@ const obtenerPaginaWebComercioPorId = async (req, res) => {
     try {
         const { id } = matchedData(req);
         const paginaWeb = await WebComercio.findById(id);
+
+        paginaWeb.comercioId = undefined;
         if (!paginaWeb) {
             return res.status(404).send("Página web de comercio no encontrada");
         }
