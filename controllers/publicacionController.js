@@ -97,20 +97,21 @@ const obtenerPaginaWebComercioPorId = async (req, res) => {
  */
 const obtenerPaginasPorActividad = async (req, res) => {
     try {
-        const { actividad } = req.params; // Obtener el parámetro de actividad desde la URL
+        const { ciudad, actividad } = req.params; // Obtener los parámetros de ciudad y actividad desde la URL
+        console.log("Ciudad recibida:", ciudad);
         console.log("Actividad recibida:", actividad);
 
-        // Buscar páginas web por actividad usando una consulta a la base de datos
-        const paginasWeb = await WebComercio.find({ actividad: actividad });
+        // Buscar páginas web por ciudad y actividad usando una consulta a la base de datos
+        const paginasWeb = await WebComercio.find({ ciudad: ciudad, actividad: actividad });
 
         if (paginasWeb.length === 0) {
-            return res.status(404).send(`No se encontraron páginas web con la actividad '${actividad}'`);
+            return res.status(404).send(`No se encontraron páginas web con la actividad '${actividad}' en la ciudad '${ciudad}'`);
         }
 
         res.send(paginasWeb);
     } catch(err) {
         console.error(err);
-        res.status(500).send("Error al obtener páginas web por actividad");
+        res.status(500).send("Error al obtener páginas web por ciudad y actividad");
     }
 }
 

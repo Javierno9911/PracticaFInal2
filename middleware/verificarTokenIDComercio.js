@@ -1,18 +1,23 @@
 const jwt = require("jsonwebtoken");
-const Usuario = require('../models/nosql/comercio');
+const Publicacion = require('../models/nosql/publicaciones'); // Importa el modelo de publicaciones
 
-const verifyToken = async (req, res, next) => {
+const verificarIdComercio = async (req, res, next) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-        // Buscar el usuario con el ID del token
-        const usuario = await Usuario.findById(decoded._id);
-        if (!usuario) {
-            return res.status(404).send("Usuario no encontrado");
+        // Buscar la publicación que se quiere actualizar
+        const publicacion = await Publicacion.findById(req.params.id);
+        if (!publicacion) {
+            return res.status(404).send("Publicación no encontrada");
         }
 
-        req.user = usuario;
+        // Comparar el comercioId de la publicación con el _id del token
+        if (publicacion.comercioId.toString() !== decoded._id) {
+            return res.status(403).send("No tienes permiso para actualizar esta publicación");
+        }
+
+        req.user = decoded;
         next();
     } catch (err) {
         console.error(err);
@@ -20,4 +25,4 @@ const verifyToken = async (req, res, next) => {
     }
 };
 
-module.exports = verifyToken;
+module.exports = verificarIdComercio;

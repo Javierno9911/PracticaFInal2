@@ -4,7 +4,7 @@
 GET http://localhost:3000/api/comercio
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3NWQ1NzQwODY5NTZiYTI5ZDVjNjkiLCJpYXQiOjE3MTU5NTI5ODMsImV4cCI6MTcxNTk2MDE4M30.IlAH5qWzX4rNJa0D4r5nwXI6cUQi9RNA95mEge6ELRY
 ###
-DELETE http://localhost:3000/api/comercio/664cc0a78160ee71f092990f
+DELETE http://localhost:3000/api/comercio/664dc42ef0933dd6ef7fc0a8
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 //TABLA DE COMERCIOS CON ID
@@ -13,14 +13,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 ###
 POST http://localhost:3000/api/comercio
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRjY2VhNDliODFmNWMxNmQ1YjdhM2YiLCJpYXQiOjE3MTYzMDk2NjgsImV4cCI6MTcxNjMxNjg2OH0.YyFK3-pxt4UA8dsj2cIaQkmU7Up3EfjK9Kq72Imubhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRkYzRmZjA1Zjk0YTBkM2E4YzQ5OTgiLCJpYXQiOjE3MTYzNzI3MzUsImV4cCI6MTcxNjM3OTkzNX0.MVelrCOp3TYCxyUTKhcHOiunN0myTbrnHQ9bhQAhmSs
 
 {
   "nombre": "MiCcio2",
   "password":"1231213132",
-  "CIF": "A155880113556",
+  "CIF": "A335881113556",
   "direccion": "Calle Ejemplo, 123",
-  "email": "cd@empe.com",
+  "email": "cd@qdadae.com",
   "telefono": "123456789"
 }
 ###
@@ -28,16 +28,16 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRjY2VhN
 
 //COMERCIO TOKEN EDITADO
 
-PUT http://localhost:3000/api/comercio/664753864890cd274155d413
+PUT http://localhost:3000/api/comercio/664dc5ab05f94a0d3a8c49ab
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3NTM4NjQ4OTBjZDI3NDE1NWQ0MTMiLCJpYXQiOjE3MTU5NTA0QzAsImV4cCI6MTcxNTk1NzY3MH0.IWoR4kLsQGxafw784RWjlR9-Mi7UEty_9ZGlF3jKLOE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRkYzVhYjA1Zjk0YTBkM2E4YzQ5YWIiLCJpYXQiOjE3MTYzNzI5MDgsImV4cCI6MTcxNjM4MDEwOH0.vT3bb-0tCqd7ea2laXgyulcu66VwdhIo029IcT_GjDo
 
 {
   "nombre": "MiCcio2",
   "password":"1231213132",
-  "CIF": "A150003556",
+  "CIF": "A150112556",
   "direccion": "Calle Ejemplo, 123",
-  "email": "codd@emle.com",
+  "email": "coeeeed@emle.com",
   "telefono": "123456789"
 }
 ###

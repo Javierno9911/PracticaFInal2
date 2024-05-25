@@ -130,13 +130,13 @@ const obtenerMiembroCiudad = async (req, res) => {
         const { ciudad } = req.params; // Obtener el parámetro de la ciudad desde la URL
         console.log("Ciudad recibida:", ciudad);
 
-        // Buscar usuarios por ciudad usando una consulta a tu base de datos
-        const usuarios = await Usuario.find({ ciudad: ciudad });
+        // Buscar usuarios por ciudad y que permiten recibir ofertas
+        const usuarios = await Usuario.find({ ciudad: ciudad, permiteRecibirOfertas: true }).select("-password");
 
         if (usuarios.length === 0) {
-            return res.status(404).send("No se encontraron usuarios en esta ciudad");
+            return res.status(404).send("No se encontraron usuarios en esta ciudad que permitan recibir ofertas");
         }
-
+        
         res.send(usuarios);
     } catch(err) {
         console.error(err);
@@ -154,11 +154,11 @@ const obtenerMiembroPorIntereses = async (req, res) => {
         const { interes } = req.params; // Obtener el parámetro de interés desde la URL
         console.log("Interés recibido:", interes);
 
-        // Buscar usuarios cuyo array de intereses incluya el valor especificado
-        const usuarios = await Usuario.find({ intereses: interes });
+        // Buscar usuarios cuyo array de intereses incluya el valor especificado y que permiten recibir ofertas
+        const usuarios = await Usuario.find({ intereses: interes, permiteRecibirOfertas: true }).select("-password");
 
         if (usuarios.length === 0) {
-            return res.status(404).send(`No se encontraron usuarios con el interés '${interes}'`);
+            return res.status(404).send(`No se encontraron usuarios con el interés '${interes}' que permitan recibir ofertas`);
         }
 
         res.send(usuarios);

@@ -2,11 +2,11 @@ GET http://localhost:3000/api/control
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
-GET http://localhost:3000/api/control/664cc9461618155a47a68061
+GET http://localhost:3000/api/control/664dadd16aa7066f6d6bcf2e
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
-DELETE http://localhost:3000/api/control/664ccc3a936c1f98133f4f52
+DELETE http://localhost:3000/api/control/664dc4e205f94a0d3a8c4991
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###                                        //DElete
 GET http://localhost:3000/api/control/ciudad/Barcelona
@@ -27,14 +27,14 @@ POST http://localhost:3000/api/control/register
 Content-Type: application/json
 
 {
-  "nombre": "Francisco",
-  "rol": "admin",
-  "email": "operoi@example.com",
+  "nombre": "Alex",
+  "rol": "miembro",
+  "email": "oeepi@eale.com",
   "password": "123",
   "edad": 34,
   "ciudad": "Barcelona",
   "intereses": ["Padel", "Fauna"],
-  "permiteRecibirOfertas": true
+  "permiteRecibirOfertas": false
 }
 ###
 
@@ -56,13 +56,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 }
 ###
 
-PUT   http://localhost:3000/api/control/664ccea49b81f5c16d5b7a3f
+PUT   http://localhost:3000/api/control/664dc52b05f94a0d3a8c499a
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRjY2VhNDliODFmNWMxNmQ1YjdhM2YiLCJpYXQiOjE3MTYzMDk2NjgsImV4cCI6MTcxNjMxNjg2OH0.YyFK3-pxt4UA8dsj2cIaQkmU7Up3EfjK9Kq72Imubhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRkYzUyYjA1Zjk0YTBkM2E4YzQ5OWEiLCJpYXQiOjE3MTYzNzI3NzksImV4cCI6MTcxNjM3OTk3OX0.dQNV5xjJwmM6ymkSl9L_9z-3XrW9d3QsoIkaPYkTrXA
 
 {
   "nombre": "Nuevo nombre",
-  "email": "nueoo@example.com",
+  "email": "nueo@example.com",
   "password": "nuevacontraseña",
   "ciudad": "Nueva Ciudad",
   "intereses": ["música", "viajes"],

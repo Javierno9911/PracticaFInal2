@@ -4,16 +4,16 @@
 GET http://localhost:3000/api/publicaciones
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
-DELETE http://localhost:3000/api/publicaciones/664ccba6936c1f98133f4f40
+DELETE http://localhost:3000/api/publicaciones/664dc1a9c72dfef9201891ee
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
-
+###
 //TABLA DE PUBLICAIONES CON ID
 
-GET http://localhost:3000/api/publicaciones/66472091b93255ddbf80781d
+GET http://localhost:3000/api/publicaciones/664dc1a9c72dfef9201891ee
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
-GET http://localhost:3000/api/publicaciones/actividad/Informatica
+GET http://localhost:3000/api/publicaciones/ciudad/Madrid/Informatica
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM2JjYjVjZjgyNTk4YTQ3NmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzgxMjU3NTAsImV4cCI6MTY3ODEzMjk1MH0.vQIpLoM67ss6kIdr8OBHiQJoko7LXOfHVcPtDMhw-TE
 ###
 
@@ -23,10 +23,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA2MjlmM
 
 POST http://localhost:3000/api/publicaciones
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRjYzBhNzgxNjBlZTcxZjA5Mjk5MGYiLCJpYXQiOjE3MTYzMDYwODcsImV4cCI6MTcxNjMxMzI4N30.67kvns78pb1IItZrzRmxNcezPYfxI5I7AkDe6OzQiuU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRkYzVhYjA1Zjk0YTBkM2E4YzQ5YWIiLCJpYXQiOjE3MTYzNzI5MDgsImV4cCI6MTcxNjM4MDEwOH0.vT3bb-0tCqd7ea2laXgyulcu66VwdhIo029IcT_GjDo
 
 {
-  "comercioId": "664753864890cd274155d413",
+  "comercioId": "664dc5ab05f94a0d3a8c49ab",
   "ciudad": "Madrid",
   "actividad": "Informatica",
   "titulo": "Título de la Página Web",
@@ -52,9 +52,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRjYzBhN
 
 //HECHO 
 
-PATCH http://localhost:3000/api/publicaciones/66470ad7631828aec71ad084
+PATCH http://localhost:3000/api/publicaciones/664dc63805f94a0d3a8c49b4
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQzM2IzZjcwMjJlOGE5ZWJjYzhhYWYiLCJpYXQiOjE3MTU2ODIxMTEsImV4cCI6MTcxNTY4OTMxMX0.wJyJ0Z6XU28jV9MtCWPMPiLgi8GqF07JAFAAhGHUPho
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRkYzM5MTg5MGMzMjUxMjg2NmY2M2IiLCJpYXQiOjE3MTYzNzIzNjksImV4cCI6MTcxNjM3OTU2OX0.p5c18dnaJGmdmWnSgSxhcNagmzIIVNA3ylyYI9bQE60
 
 {
   "datosNoModificables": {
@@ -68,13 +68,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQzM2IzZ
 }
 ###
 
-PUT http://localhost:3000/api/publicaciones/6637d07bdb3edf2c58427be9
+PUT http://localhost:3000/api/publicaciones/664dc63805f94a0d3a8c49b4
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRjYzBhNzgxNjBlZTcxZjA5Mjk5MGYiLCJpYXQiOjE3MTYzMDYwODcsImV4cCI6MTcxNjMxMzI4N30.67kvns78pb1IItZrzRmxNcezPYfxI5I7AkDe6OzQiuU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRkYzVhYjA1Zjk0YTBkM2E4YzQ5YWIiLCJpYXQiOjE3MTYzNzI5MDgsImV4cCI6MTcxNjM4MDEwOH0.vT3bb-0tCqd7ea2laXgyulcu66VwdhIo029IcT_GjDo
 
 {
-  "comercioId": "664753864890cd274155d413",
-  "ciudad": "Ciudad de Ejemplo",
+  "ciudad": "Ciudad de Eplo",
   "actividad": "Padel",
   "titulo": "Título de la Página Web",
   "resumen": "Resumen de la Página Web",
@@ -85,15 +84,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRjYzBhN
   "fotos": [
     "URL de la foto 1",
     "URL de la foto 2"
-  ],
-  "datosNoModificables": {
-    "scoring": 0,
-    "numeroPuntuaciones": 0,
-    "resenhas": [
-      "Reseña 1",
-      "Reseña 2"
-    ]
-  }
+  ]
 }
 ###
 //ELIMINAR PUBLICAIONES
